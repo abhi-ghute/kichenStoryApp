@@ -10,6 +10,7 @@ import { AdminComponent } from './admin/admin.component';
 import { LoginComponent } from './admin/login/login.component';
 import { ChangePasswordComponent } from './admin/change-password/change-password.component';
 import { ProductDetailsComponent } from './admin/product-details/product-details.component';
+import { LogoutComponent } from './admin/logout/logout.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { ProductDetailsComponent } from './admin/product-details/product-details
     AdminComponent,
     LoginComponent,
     ChangePasswordComponent,
-    ProductDetailsComponent
+    ProductDetailsComponent,
+    LogoutComponent
   ],
   imports: [
     BrowserModule,

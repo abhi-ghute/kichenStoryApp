@@ -6,4 +6,11 @@ import { Injectable } from '@angular/core';
 export class ProductService {
 
   constructor() { }
+  ProductArray:object[]=[];
+
+  addProduct(product:any):boolean{
+    console.log(product.image);
+    this.ProductArray.push(product);
+    return true;
+  }
 }

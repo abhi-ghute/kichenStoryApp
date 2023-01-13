@@ -22,7 +22,10 @@ export class LoginComponent extends AdminComponent implements OnInit{
 
   login() {
     if(this.authService.login(this.email, this.password)){
-      this._router.navigateByUrl('/home');
+      this._router.navigateByUrl('admin/addProduct');
+    }else{
+      alert("wrong Credntials");
+      this._router.navigateByUrl('admin/login');
     }
   }
 

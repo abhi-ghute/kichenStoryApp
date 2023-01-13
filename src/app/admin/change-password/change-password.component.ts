@@ -9,6 +9,7 @@ import { Router } from '@angular/router';
 })
 export class ChangePasswordComponent implements OnInit{
 
+  data:string='';
   currentPassword: string = '';
   newPassword: string ='';
   confirmNewPassword: string='';
@@ -16,6 +17,9 @@ export class ChangePasswordComponent implements OnInit{
   constructor(private authService: AuthService,private _router: Router) { }
 
   ngOnInit() {
+    if(this.authService.checkLogin()){
+      this._router.navigateByUrl('/admin/login');
+     }
   }
 
   changePassword() {
@@ -24,7 +28,7 @@ export class ChangePasswordComponent implements OnInit{
         this._router.navigateByUrl('/admin/login');
       }
     } else {
-      // show error message
+      alert("password change Unsuccessful..")
     }
   }
 }

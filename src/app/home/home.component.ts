@@ -1,5 +1,3 @@
-
-
 import { Component } from '@angular/core';
 
 @Component({
@@ -13,5 +11,4 @@ export class HomeComponent {
     { image: '../../assets/images/carousel/1.png', text: 'Second' },
     { image: '../../assets/images/carousel/1.png', text: 'Third' }
   ];
- 
 }
