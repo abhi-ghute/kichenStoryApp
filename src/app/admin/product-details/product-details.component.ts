@@ -2,7 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { ProductService } from 'src/app/product/product.service';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/auth/auth.service';
-import { HttpClient } from '@angular/common/http';
+import { product } from 'src/app/product/product';
+
 
 @Component({
   selector: 'app-product-details',
@@ -14,43 +15,42 @@ export class ProductDetailsComponent implements OnInit {
   name: string = '';
   description: string = '';
   price: number = 0;
-  image: File | undefined = undefined;
+  image: string[] = [];
+
   ngOnInit(): void {
-    if(this.authService.checkLogin()){
+    if (this.authService.checkLogin()) {
       this._router.navigateByUrl('/admin/login');
-     }
+    }
   };
   constructor(private productService: ProductService, private authService: AuthService, private _router: Router) { }
 
+  selectedImageToShow: string = "";
+
+detectFiles(event: any) {
+  let file = event.target.files[0];
+
+  this.image = [];
+
+  console.log(file);
+
+  if (file) {
+    let reader = new FileReader();
+    reader.onload = (e: any) => {
+      this.image.push(e.target.result);
+    }
+    reader.readAsDataURL(file);
+  }
+}
   addProduct() {
-    let product = {
+    let product: product = {
+      id: this.productService.ProductArray.length + 1,
       name: this.name,
       description: this.description,
       price: this.price,
       image: this.image
     }
-    this.productService.addProduct(product);
+    if (this.productService.addProduct(product)) {
+      this._router.navigateByUrl('admin/products');
+    }
   }
-
-  urls = new Array<string>();
-    selectedImageToShow : string ="";
-
-      detectFiles(event:any) {
-        let file = event.target.files[0];
-
-        this.urls = [];
-        
-        console.log(file);
-        
-        if (file) {
-         
-            let reader = new FileReader();
-            reader.onload = (e: any) => {
-              this.urls.push(e.target.result);
-            }
-            reader.readAsDataURL(file);
-        }
-      }
-
-
 }

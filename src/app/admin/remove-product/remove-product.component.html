@@ -1,0 +1,12 @@
+<table>
+    <tr>
+      <th>Product Name</th>
+      <th>Price</th>
+    </tr>
+    <tr *ngFor="let product of productArray">
+      <td>{{ product.name }}</td>
+      <td>{{ product.price }}</td>
+      <td><button (click)="removeProduct(product.id)">Click me</button></td>
+    </tr>
+  </table>
+  

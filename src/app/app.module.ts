@@ -11,6 +11,9 @@ import { LoginComponent } from './admin/login/login.component';
 import { ChangePasswordComponent } from './admin/change-password/change-password.component';
 import { ProductDetailsComponent } from './admin/product-details/product-details.component';
 import { LogoutComponent } from './admin/logout/logout.component';
+import { ShowProductComponent } from './show-product/show-product.component';
+import { RemoveProductComponent } from './admin/remove-product/remove-product.component';
+import { HeaderFooterComponent } from './header-footer/header-footer.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +23,10 @@ import { LogoutComponent } from './admin/logout/logout.component';
     LoginComponent,
     ChangePasswordComponent,
     ProductDetailsComponent,
-    LogoutComponent
+    LogoutComponent,
+    ShowProductComponent,
+    RemoveProductComponent,
+    HeaderFooterComponent
   ],
   imports: [
     BrowserModule,

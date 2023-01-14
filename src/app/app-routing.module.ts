@@ -4,7 +4,9 @@ import { ChangePasswordComponent } from './admin/change-password/change-password
 import { LoginComponent } from './admin/login/login.component';
 import { LogoutComponent } from './admin/logout/logout.component';
 import { ProductDetailsComponent } from './admin/product-details/product-details.component';
+import { RemoveProductComponent } from './admin/remove-product/remove-product.component';
 import { HomeComponent } from './home/home.component';
+import { ShowProductComponent } from './show-product/show-product.component';
 
 const routes: Routes = [
   {
@@ -12,10 +14,12 @@ const routes: Routes = [
       { path: 'login', component: LoginComponent },
       {path:'changePassword',component:ChangePasswordComponent},
       {path:'addProduct',component:ProductDetailsComponent},
-      {path:'logout',component:LogoutComponent}
+      {path:'logout',component:LogoutComponent},
+      {path:'remove',component:RemoveProductComponent}
     ]
   },
   { path: 'home', component: HomeComponent },
+  { path: 'products', component: ShowProductComponent },
 ];
 
 @NgModule({
