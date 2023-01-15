@@ -5,8 +5,8 @@ import { Injectable } from '@angular/core';
 })
 export class AuthService {
 
-  email:string="a";
-  password:string="a";
+  email:string="admin";
+  password:string="admin";
 
   constructor() { }
 

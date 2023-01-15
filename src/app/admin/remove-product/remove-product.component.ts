@@ -17,13 +17,13 @@ export class RemoveProductComponent {
     if(this.authService.checkLogin()){
       this._router.navigateByUrl('/admin/login');
      }
-     this.productArray = this.productService.getProducts();
+     this.productArray = this.productService.getProducts('all');
   };
   constructor(private productService: ProductService, private authService: AuthService, private _router: Router) { 
   }
 
   removeProduct(id:number) {
     this.productService.removeProduct(id);
-    this.productArray = this.productService.getProducts();
+    this.productArray = this.productService.getProducts('all');
   }
 }

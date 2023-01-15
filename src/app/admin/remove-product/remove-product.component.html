@@ -1,12 +1,17 @@
-<table>
+<div class="row d-flex justify-content-center">
+  <div class="col-md-6" style="background-color: white;">
+<table class="table table-bordered">
     <tr>
-      <th>Product Name</th>
-      <th>Price</th>
+      <th class="thead-dark">Product Name</th>
+      <th class="thead-dark">Product Price</th>
+      <th class="thead-dark">Action</th>
     </tr>
     <tr *ngFor="let product of productArray">
       <td>{{ product.name }}</td>
       <td>{{ product.price }}</td>
-      <td><button (click)="removeProduct(product.id)">Click me</button></td>
+      <td><button class="btn btn-primary" (click)="removeProduct(product.id)"><span style="color: red;">Remove</span></button></td>
     </tr>
   </table>
+</div>
+</div>
   

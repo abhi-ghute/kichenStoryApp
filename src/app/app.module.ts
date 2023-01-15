@@ -14,6 +14,8 @@ import { LogoutComponent } from './admin/logout/logout.component';
 import { ShowProductComponent } from './show-product/show-product.component';
 import { RemoveProductComponent } from './admin/remove-product/remove-product.component';
 import { HeaderFooterComponent } from './header-footer/header-footer.component';
+import { PaymentComponent } from './payment/payment.component';
+import { ConfirmationComponent } from './confirmation/confirmation.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +28,9 @@ import { HeaderFooterComponent } from './header-footer/header-footer.component';
     LogoutComponent,
     ShowProductComponent,
     RemoveProductComponent,
-    HeaderFooterComponent
+    HeaderFooterComponent,
+    PaymentComponent,
+    ConfirmationComponent
   ],
   imports: [
     BrowserModule,

@@ -50,7 +50,7 @@ detectFiles(event: any) {
       image: this.image
     }
     if (this.productService.addProduct(product)) {
-      this._router.navigateByUrl('admin/products');
+      this._router.navigateByUrl('/products/all');
     }
   }
 }

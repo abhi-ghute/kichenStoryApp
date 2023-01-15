@@ -17,29 +17,36 @@ export class ProductService implements OnInit{
       id: 1,
       name: "Sugar",
       description: "Sugar without chemical for dibeties people",
-      price: 81,
-      image: ["../../assets/images/carousel/1.png"]
+      price: 40,
+      image: ["../../assets/images/product/sugar.png"]
     },
     {
       id: 2,
-      name: "Sugar",
-      description: "Sugar without chemical for dibeties people",
-      price: 82,
-      image: ["../../assets/images/carousel/1.png"]
+      name: "Ghee",
+      description: "Natural ghee product made from the cow milk",
+      price: 500,
+      image: ["../../assets/images/product/ghee.png"]
     },
     {
       id: 3,
-      name: "Sugar",
-      description: "Sugar without chemical for dibeties people",
-      price: 83,
-      image: ["../../assets/images/carousel/1.png"]
+      name: "Biscuit",
+      description: "Sugar free dibeties biscuits",
+      price: 30,
+      image: ["../../assets/images/product/biscuit.png"]
     },
     {
       id: 4,
-      name: "Sugar",
-      description: "Sugar without chemical for dibeties people",
-      price: 84,
-      image: ["../../assets/images/carousel/1.png"]
+      name: "Salt",
+      description: "Black salt with extara potashium",
+      price: 50,
+      image: ["../../assets/images/product/salt.png"]
+    },
+    {
+      id: 5,
+      name: "Rice",
+      description: "Rice for Biryani",
+      price: 90,
+      image: ["../../assets/images/product/rice.png"]
     }
   ];
 
@@ -49,7 +56,7 @@ export class ProductService implements OnInit{
     return true;
   }
 
-  getProducts(): product[] {
+  getProducts(filterVal:string): product[] {
     let temp:string|null = sessionStorage.getItem("product");
     let tempArray:product[]=[];
 
@@ -57,6 +64,16 @@ export class ProductService implements OnInit{
       tempArray = JSON.parse(temp);
     }
     
+    if(filterVal!="all"){
+      let  filterArray:product[]=[];
+      for(let t of tempArray){
+        if(t.name.toLocaleLowerCase().includes(filterVal.toLowerCase()) || t.description.toLowerCase().includes(filterVal.toLowerCase())){
+          filterArray.push(t);
+        }
+      }
+
+      return filterArray;
+    }
     return tempArray;
   }
 

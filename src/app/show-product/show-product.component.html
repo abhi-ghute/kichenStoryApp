@@ -1,12 +1,14 @@
-<h1>show</h1>
 <div class="row d-flex justify-content-center">
     <div class="card col-lg-3 col-md-4" *ngFor="let product of productArray">
-        <img class="card-img-top" src="{{product.image}}" alt="Card image cap">
+        <img class="card-img-top" src="{{product.image}}" style="width: 300px; height: 200px;" alt="Card image cap">
         <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-                content.</p>
-            <a href="#" class="btn btn-primary">Go somewhere</a>
+            <h5 class="card-title">{{product.name}}</h5>
+            <p class="card-text">{{product.description}}</p>
+            <h4>RS.{{product.price}}</h4>
+            <a class="nav-link btn btn-outline-success" 
+    [routerLink]="['/payment']"
+    [queryParams]="{name: product.name,description: product.description,price: product.price }">Buy Now</a>
+   
         </div>
     </div>
 </div>
